@@ -1,4 +1,4 @@
-package com.company.leetcode;
+package AlgoPlayground.leetcode;
 
 class ListNode {
       int val;

@@ -1,4 +1,4 @@
-package com.company.leetcode;
+package AlgoPlayground.leetcode;
 
 
 import java.util.ArrayList;
