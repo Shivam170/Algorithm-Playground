@@ -1,4 +1,4 @@
-package AlgoPlayground.misc.tree.BinaryTree;
+package AlgoPlayground.misc.Tree.BinaryTree;
 
 public class SameBinaryTree {
     public boolean sameTree(TreeNode r1,TreeNode r2){

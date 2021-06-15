@@ -1,4 +1,4 @@
-package AlgoPlayground.misc.tree.BinaryTree;
+package AlgoPlayground.misc.Tree.BinaryTree;
 
 public class TreeNode {
     TreeNode left, right;

@@ -1,8 +1,4 @@
-package AlgoPlayground.misc.tree.BinaryTree;
-
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+package AlgoPlayground.misc.Tree.BinaryTree;
 
 public class BinaryTree<T> {
     TreeNode root;

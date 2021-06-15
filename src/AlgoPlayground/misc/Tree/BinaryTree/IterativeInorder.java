@@ -1,4 +1,4 @@
-package AlgoPlayground.misc.tree.BinaryTree;
+package AlgoPlayground.misc.Tree.BinaryTree;
 
 import java.util.Stack;
 
@@ -13,7 +13,7 @@ public class IterativeInorder {
             }else{
                 if(s.isEmpty()) break;
                 root = s.pop();
-                System.out.println(root.data);
+                System.out.print(root.data+" ");
                 root=root.right;
             }
         }
