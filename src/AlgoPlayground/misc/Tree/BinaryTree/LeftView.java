@@ -26,7 +26,7 @@ public class LeftView {
                     isFirst=false;
                 }
             }
-            
+
             if (root.left != null) {
                 q.add(root.left);
             }

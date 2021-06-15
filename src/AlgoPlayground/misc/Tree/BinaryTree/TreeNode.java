@@ -3,7 +3,9 @@ package AlgoPlayground.misc.Tree.BinaryTree;
 public class TreeNode {
     TreeNode left, right;
     int data;
+    TreeNode(){
 
+    }
     TreeNode(int data) {
         this.data = data;
         this.left = null;

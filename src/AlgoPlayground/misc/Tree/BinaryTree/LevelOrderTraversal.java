@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class LevelOrderTraversal {
-    public void levelOrderTraversal(TreeNode root) {
+    public static void levelOrderTraversal(TreeNode root) {
         if (root == null)
             return;
         Queue<TreeNode> q = new LinkedList<>();
