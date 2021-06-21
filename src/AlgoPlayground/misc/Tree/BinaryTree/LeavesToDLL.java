@@ -9,6 +9,7 @@ public class LeavesToDLL {
         if(root.left == null && root.right == null){
             if(this.prev==null){
                 this.head = root;
+
             }else{
                 root.left = prev;
                 this.prev.right = root;
