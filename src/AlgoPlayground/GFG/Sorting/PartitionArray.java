@@ -25,7 +25,7 @@ public class PartitionArray {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    
+
     int lomutoPartition(int[] arr,int l, int h){
         int pivot = arr[h];
         int i = l-1;
@@ -37,5 +37,16 @@ public class PartitionArray {
         }
         swap(arr,i+1,h);
         return i+1;
+    }
+
+    int hoarsePartition(int[] arr,int l,int h){
+        int pivot = arr[l];
+        int i = l-1,j=h-1;
+        while(true){
+            do{i++;}while (arr[i]<pivot);
+            do{j--;}while (arr[j]>pivot);
+            if (i>=j)return j;
+            swap(arr,i,j);
+        }
     }
 }
