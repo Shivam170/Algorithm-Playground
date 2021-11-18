@@ -17,7 +17,7 @@ public class MaximumSumSubarray {
 
     // Efficient Solution
 
-    int maxSum(int[] arr, int n){
+   static int maxSum(int[] arr, int n){
         int res = arr[0];
         int maxEnding = arr[0];
         for (int i = 1; i < n; i++) {
