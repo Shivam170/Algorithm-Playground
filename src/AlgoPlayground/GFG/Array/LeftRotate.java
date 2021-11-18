@@ -9,6 +9,7 @@ public class LeftRotate {
         }
         arr[n-1] = temp;
     }
+
     //Left Rotate By d
 
     //Naive Solution
