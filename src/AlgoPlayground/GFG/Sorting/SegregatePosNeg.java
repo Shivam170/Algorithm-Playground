@@ -20,4 +20,20 @@ public class SegregatePosNeg {
             arr[j] = temp[j];
         }
     }
+
+    void efficient(int[] arr, int n){
+        int i = -1, j = n;
+        while(true){
+            do{i++;}while (arr[i]<0);
+            do{j--;}while(arr[j]>=0);
+            if (i>=j)
+                return;
+            swap(arr,i,j);
+        }
+    }
+    void swap(int[] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 }
