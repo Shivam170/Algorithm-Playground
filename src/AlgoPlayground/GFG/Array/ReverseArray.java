@@ -1,7 +1,7 @@
 package AlgoPlayground.GFG.Array;
 
 public class ReverseArray {
-    void reverse(int[] arr, int n){
+   static void reverse(int[] arr, int n){
         int low = 0, high = n-1;
         while(low<high){
             int temp =arr[low];
