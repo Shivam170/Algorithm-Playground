@@ -1,6 +1,6 @@
 package AlgoPlayground.GFG.Searching;
 
-public class FirstOccurence {
+public class FirstOccurrence {
     // Naive Solution (Linear Search) : O(n) Time complexity and O(1) Space Complexity
 
     // Efficient Solution (Binary Search) : O(log(n)) Time complexity and O(1) Space Complexity
