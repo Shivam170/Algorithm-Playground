@@ -3,10 +3,10 @@ package AlgoPlayground.GFG.Hashing;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-class MyHash {
+class Chaining{
     int BUCKET;
     ArrayList<LinkedList<Integer>> table;
-    MyHash(int b ){
+    Chaining(int b ){
         BUCKET = b;
         table = new ArrayList< LinkedList<Integer>>();
         for (int i = 0; i < b; i++) {
