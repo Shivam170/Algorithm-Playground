@@ -25,7 +25,7 @@ public class LPS {
         }
     }
 
-    void fillLPSEff(String str, int[] lps){
+    static void fillLPSEff(String str, int[] lps){
         int n = str.length(), len=0;
         lps[0] = 0;
         int i = 1;
