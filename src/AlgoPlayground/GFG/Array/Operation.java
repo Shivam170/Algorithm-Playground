@@ -1,7 +1,7 @@
 package AlgoPlayground.GFG.Array;
 
-public class Operaiton {
-    int insert (int  arr[],int n, int x, int cap, int pos){
+public class Operation {
+    int insert (int[]  arr,int n, int x, int cap, int pos){
         if(n==cap) return n;
         int idx = pos-1;
         for (int i = n-1;i>=idx;i--){
@@ -10,7 +10,7 @@ public class Operaiton {
         arr[idx]=x;
         return n+1;
     }
-    int delete(int arr[], int n, int x){
+    int delete(int[] arr, int n, int x){
         int i;
         for (i=0;i<n;i++){
             if(arr[i]==x){
