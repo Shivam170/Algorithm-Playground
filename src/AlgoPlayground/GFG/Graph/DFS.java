@@ -18,4 +18,13 @@ public class DFS {
         boolean[] visited = new boolean[V];
         DFSRec(adj, s, visited);
     }
+
+    void DFSDisconnected(ArrayList<ArrayList<Integer>> adj, int V) {
+        boolean[] visited = new boolean[V];
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                DFSRec(adj, i, visited);
+            }
+        }
+    }
 }
