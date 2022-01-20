@@ -19,6 +19,7 @@ public class AdjacencyList {
         addEdge(adj,0,2);
         addEdge(adj,1,2);
         addEdge(adj,1,3);
+        printGraph(adj);
     }
     static void printGraph(ArrayList<ArrayList<Integer>> adj){
         for (int i = 0; i < adj.size(); i++) {
