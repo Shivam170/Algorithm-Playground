@@ -48,4 +48,16 @@ public class BFS {
             }
         }
     }
+
+    void connectedComponents(ArrayList<ArrayList<Integer>> adj, int V){
+        int count = 0;
+        boolean[] visited = new boolean[V + 1];
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                BFSHelper(adj, i, visited);
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
 }
