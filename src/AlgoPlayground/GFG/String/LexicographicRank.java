@@ -29,4 +29,8 @@ public class LexicographicRank {
         return res;
     }
 
+    public static void main(String[] args) {
+        System.out.println(lexRank("STRING"));
+    }
+
 }
