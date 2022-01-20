@@ -1,5 +1,7 @@
 package AlgoPlayground.GFG.String;
 
+import java.util.Arrays;
+
 public class LongestDistinctSubstring {
     static boolean areDistinct(String str, int i, int j) {
         boolean[] visited = new boolean[256];
@@ -36,6 +38,21 @@ public class LongestDistinctSubstring {
                     visited[str.charAt(j)]=true;
                 }
             }
+        }
+        return res;
+    }
+
+    static int longestDist(String str){
+        int n = str.length();
+        int res = 0;
+        int[] prev = new int[256];
+        Arrays.fill(prev,-1);
+        int i=0;
+        for (int j = 0; j < n; j++) {
+            i = Math.max(i,prev[str.charAt(j)]+1);
+            int maxEnd = j-i+1;
+            res = Math.max(res,maxEnd);
+            prev[str.charAt(j)]=j;
         }
         return res;
     }
