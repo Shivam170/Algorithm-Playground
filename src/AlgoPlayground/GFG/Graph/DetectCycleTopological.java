@@ -3,18 +3,19 @@ package AlgoPlayground.GFG.Graph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
-public class TopologicalSorting {
+public class DetectCycleTopological {
     void fillInDegree(ArrayList<ArrayList<Integer>> adj, int[] inDegree){
-        for (int i = 0; i < adj.size(); i++) {
-            for (int j = 0; j < adj.get(i).size(); j++) {
-                inDegree[adj.get(i).get(j)]++;
+        for (ArrayList<Integer> integers : adj) {
+            for (Integer integer : integers) {
+                inDegree[integer]++;
             }
         }
     }
     // Kahn's Algorithm
     // Time Complexity -> O(V+E)
-    void topologicalSorting(ArrayList<ArrayList<Integer>> adj, int V) {
+    boolean topologicalSorting(ArrayList<ArrayList<Integer>> adj, int V) {
         int[] inDegree = new int[V];
         fillInDegree(adj,inDegree);
         Queue<Integer> q = new LinkedList<>();
@@ -23,6 +24,7 @@ public class TopologicalSorting {
                 q.add(i);
             }
         }
+        int count = 0;
         while (!q.isEmpty()) {
             int u = q.poll();
             System.out.print(u + " ");
@@ -32,6 +34,8 @@ public class TopologicalSorting {
                     q.add(v);
                 }
             }
+            count++;
         }
+        return count!=V;
     }
 }
