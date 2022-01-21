@@ -3,7 +3,6 @@ package AlgoPlayground.GFG.Graph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
 public class DetectCycleTopological {
     void fillInDegree(ArrayList<ArrayList<Integer>> adj, int[] inDegree){
@@ -13,6 +12,7 @@ public class DetectCycleTopological {
             }
         }
     }
+
     // Kahn's Algorithm
     // Time Complexity -> O(V+E)
     boolean topologicalSorting(ArrayList<ArrayList<Integer>> adj, int V) {
