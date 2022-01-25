@@ -16,6 +16,14 @@ class Activity implements Comparable<Activity> {
     public int compareTo(Activity activity) {
         return this.finish - activity.finish;
     }
+
+    @Override
+    public String toString() {
+        return "Activity{" +
+                "start=" + start +
+                ", finish=" + finish +
+                '}';
+    }
 }
 
 public class ActivitySelectionProblem {
@@ -31,6 +39,7 @@ public class ActivitySelectionProblem {
                 l=arr[i].finish;
             }
         }
+        System.out.println(set);
         return set.size();
     }
 
