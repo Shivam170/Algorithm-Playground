@@ -2,7 +2,7 @@ package AlgoPlayground.misc.Practice;
 
 public class SwastikaPattern {
     public static void main(String[] args) {
-        printPattern(5);
+        printPattern(11);
     }
 
     static void printPattern(int n) {
