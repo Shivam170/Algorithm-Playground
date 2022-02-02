@@ -2,6 +2,7 @@ package AlgoPlayground.GFG.LinkedList;
 
 
 // Test Implementation
+
 class Node {
     int data;
     Node next;
@@ -11,8 +12,8 @@ class Node {
         next = null;
     }
 }
+public class SinglyLinkedList {
 
-public class Test {
     static Node insertBegin(Node head, int x) {
         Node node = new Node(x);
         node.next = head;
