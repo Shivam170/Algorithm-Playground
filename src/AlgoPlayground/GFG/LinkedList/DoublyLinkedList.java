@@ -33,10 +33,12 @@ public class DoublyLinkedList {
         }
         temp.next = node;
         node.prev = temp;
-        return node;
+        return head;
     }
 
     public static void main(String[] args) {
-
+        DNode head = null;
+        head = insertEnd(head, 10);
+        head = insertEnd(head, 20);
     }
 }
