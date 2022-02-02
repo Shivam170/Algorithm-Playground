@@ -33,6 +33,8 @@ public class CircularLinkedList {
         return node;
     }
 
+
+    // Trick
     static Node insertBeginFast(Node head, int x) {
         Node node = new Node(x);
         if (head == null) {
@@ -46,6 +48,20 @@ public class CircularLinkedList {
         head.data = node.data;
         node.data = t;
         return head;
+    }
+
+    static Node insertEnd(Node head, int x) {
+        Node node = new Node(x);
+        if (head == null) {
+            node.next = node;
+            return node;
+        } else {
+            Node temp = head;
+            while (temp != head) temp = temp.next;
+            temp.next = node;
+            node.next = head;
+            return head;
+        }
     }
 
     public static void main(String[] args) {
