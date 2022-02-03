@@ -21,7 +21,19 @@ public class DoublyLinkedList {
             head.prev = node;
         return node;
     }
-
+    static DNode insertEnd(DNode head, int x) {
+        DNode node = new DNode(x);
+        if (head == null) {
+            return node;
+        }
+        DNode temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = node;
+        node.prev = temp;
+        return head;
+    }
     static DNode deleteFirst(DNode head) {
         if (head == null || head.next == null) return null;
         head=head.next;
@@ -37,20 +49,6 @@ public class DoublyLinkedList {
         }
         temp.prev.next=null;
         temp.prev=null;
-        return head;
-    }
-
-    static DNode insertEnd(DNode head, int x) {
-        DNode node = new DNode(x);
-        if (head == null) {
-            return node;
-        }
-        DNode temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        temp.next = node;
-        node.prev = temp;
         return head;
     }
 

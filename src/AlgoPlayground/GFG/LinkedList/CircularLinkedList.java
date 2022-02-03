@@ -33,8 +33,6 @@ public class CircularLinkedList {
         return node;
     }
 
-
-    // Trick
     static Node insertBeginFast(Node head, int x) {
         Node node = new Node(x);
         if (head == null) {
@@ -79,8 +77,42 @@ public class CircularLinkedList {
         }
     }
 
-    static Node deleteFirst(Node head){
+    static Node deleteFirst(Node head) {
+        if (head == null) {
+            return null;
+        }
+        if (head.next == head) {
+            return null;
+        }
+        Node curr = head;
+        while (curr.next != head) {
+            curr = curr.next;
+        }
+        curr.next = head.next;
+        return curr.next;
+    }
 
+    static Node deleteFirstFast(Node head) {
+        if (head == null) return null;
+        if (head.next == head) return null;
+        head.data = head.next.data;
+        head.next = head.next.next;
+        return head;
+    }
+
+    static Node deleteKthNode(Node head, int k) {
+        if (head == null) {
+            return null;
+        }
+        if (k == 1) {
+            return deleteFirstFast(head);
+        }
+        Node curr = head;
+        for (int i = 0; i < k - 2; i++) {
+            curr = curr.next;
+        }
+        curr.next = curr.next.next;
+        return head;
     }
 
     public static void main(String[] args) {
