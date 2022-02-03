@@ -57,11 +57,30 @@ public class CircularLinkedList {
             return node;
         } else {
             Node temp = head;
-            while (temp != head) temp = temp.next;
+            while (temp.next != head) temp = temp.next;
             temp.next = node;
             node.next = head;
             return head;
         }
+    }
+
+    static Node insertEndFast(Node head, int x) {
+        Node node = new Node(x);
+        if (head == null) {
+            node.next = node;
+            return node;
+        } else {
+            node.next = head.next;
+            head.next = node;
+            int t = node.data;
+            node.data = head.data;
+            head.data = t;
+            return node;
+        }
+    }
+
+    static Node deleteFirst(Node head){
+
     }
 
     public static void main(String[] args) {
