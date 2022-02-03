@@ -16,7 +16,6 @@ public class CircularLinkedList {
         } while (temp != head);
 
     }
-
     static Node insertBegin(Node head, int x) {
         Node node = new Node(x);
         if (head == null) {
@@ -32,7 +31,6 @@ public class CircularLinkedList {
         }
         return node;
     }
-
     static Node insertBeginFast(Node head, int x) {
         Node node = new Node(x);
         if (head == null) {
@@ -47,7 +45,6 @@ public class CircularLinkedList {
         node.data = t;
         return head;
     }
-
     static Node insertEnd(Node head, int x) {
         Node node = new Node(x);
         if (head == null) {
@@ -61,7 +58,6 @@ public class CircularLinkedList {
             return head;
         }
     }
-
     static Node insertEndFast(Node head, int x) {
         Node node = new Node(x);
         if (head == null) {
@@ -76,7 +72,6 @@ public class CircularLinkedList {
             return node;
         }
     }
-
     static Node deleteFirst(Node head) {
         if (head == null) {
             return null;
@@ -91,7 +86,6 @@ public class CircularLinkedList {
         curr.next = head.next;
         return curr.next;
     }
-
     static Node deleteFirstFast(Node head) {
         if (head == null) return null;
         if (head.next == head) return null;
@@ -99,7 +93,6 @@ public class CircularLinkedList {
         head.next = head.next.next;
         return head;
     }
-
     static Node deleteKthNode(Node head, int k) {
         if (head == null) {
             return null;
@@ -113,9 +106,5 @@ public class CircularLinkedList {
         }
         curr.next = curr.next.next;
         return head;
-    }
-
-    public static void main(String[] args) {
-
     }
 }
