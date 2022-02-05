@@ -1,8 +1,10 @@
 package AlgoPlayground.misc.Practice;
 
+import javax.swing.*;
+
 public class SwastikaPattern {
     public static void main(String[] args) {
-        printPattern(11);
+        printPattern(15);
     }
 
     static void printPattern(int n) {
