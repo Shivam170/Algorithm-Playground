@@ -29,4 +29,20 @@ public class ReverseLinkedList {
         }
         return prev;
     }
+
+    static Node reverseRec(Node head) {
+        if (head == null || head.next == null) return head;
+        Node restHead = reverseRec(head.next);
+        Node restTail = head.next;
+        restTail.next = head;
+        head.next = null;
+        return restHead;
+    }
+
+    static Node reverseRecII(Node curr, Node prev) {
+        if (curr == null) return prev;
+        Node next = curr.next;
+        curr.next = prev;
+        return reverseRecII(next, curr);
+    }
 }
