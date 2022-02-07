@@ -26,6 +26,7 @@ public class IntersectionOfLinkedList {
         int i = 0;
         while (i < abs) {
             temp = temp.next;
+            i++;
         }
         while (temp != null && temp1 != null) {
             if (temp.data == temp1.data)
