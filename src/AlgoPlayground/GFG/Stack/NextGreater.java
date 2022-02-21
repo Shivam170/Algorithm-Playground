@@ -19,8 +19,9 @@ public class NextGreater {
     void nextGreater(int[] arr, int n) {
         ArrayDeque<Integer> s = new ArrayDeque<>();
         s.push(arr[n - 1]);
+        System.out.print(-1 + " ");
         for (int i = n - 1; i >= 0; i--) {
-            while (s.isEmpty() == false && s.peek() <= arr[i])
+            while (!s.isEmpty() && s.peek() <= arr[i])
                 s.pop();
 
             int ng = s.isEmpty() ? -1 : s.peek();
