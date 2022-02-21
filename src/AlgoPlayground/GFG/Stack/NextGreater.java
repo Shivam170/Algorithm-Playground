@@ -1,5 +1,7 @@
 package AlgoPlayground.GFG.Stack;
 
+import java.util.ArrayDeque;
+
 public class NextGreater {
     void naive(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -14,7 +16,16 @@ public class NextGreater {
         }
     }
 
-    void nextGreater(int[] arr) {
+    void nextGreater(int[] arr, int n) {
+        ArrayDeque<Integer> s = new ArrayDeque<>();
+        s.push(arr[n - 1]);
+        for (int i = n - 1; i >= 0; i--) {
+            while (s.isEmpty() == false && s.peek() <= arr[i])
+                s.pop();
 
+            int ng = s.isEmpty() ? -1 : s.peek();
+            System.out.print(ng + " ");
+            s.push(arr[i]);
+        }
     }
 }
