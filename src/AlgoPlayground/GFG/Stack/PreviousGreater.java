@@ -19,7 +19,8 @@ public class PreviousGreater {
     void prevGreater(int[] arr) {
         ArrayDeque<Integer> s = new ArrayDeque<>();
         s.push(arr[0]);
-        for (int i = 0; i < arr.length; i++) {
+        System.out.print(-1+" ");
+        for (int i = 1; i < arr.length; i++) {
             while (!s.isEmpty() && s.peek() <= arr[i]) {
                 s.pop();
             }
