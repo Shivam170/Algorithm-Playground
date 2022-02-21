@@ -1,5 +1,7 @@
 package AlgoPlayground.GFG.Stack;
 
+import java.util.ArrayDeque;
+
 public class LargestRectHist {
     void naive(int[] arr) {
         int res = 0;
@@ -19,4 +21,25 @@ public class LargestRectHist {
         System.out.println(res);
     }
 
+    int getMaxArea(int[] arr) {
+        ArrayDeque<Integer> s = new ArrayDeque<>();
+        int res = 0;
+        int tp;
+        int curr;
+        for (int i = 0; i < arr.length; i++) {
+
+            while (!s.isEmpty() && arr[s.peek()] >= arr[i]) {
+                tp = s.pop();
+                curr = arr[tp] * (s.isEmpty() ? i : (i - s.peek() - 1));
+                res = Math.max(res, curr);
+            }
+            s.push(i);
+        }
+        while (!s.isEmpty()) {
+            tp = s.pop();
+            curr = arr[tp] * (s.isEmpty() ? arr.length : arr.length - s.peek() - 1);
+            res = Math.max(res, curr);
+        }
+        return res;
+    }
 }
