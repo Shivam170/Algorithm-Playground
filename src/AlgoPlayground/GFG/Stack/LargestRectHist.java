@@ -21,7 +21,7 @@ public class LargestRectHist {
         System.out.println(res);
     }
 
-    int getMaxArea(int[] arr) {
+    static int getMaxArea(int[] arr) {
         ArrayDeque<Integer> s = new ArrayDeque<>();
         int res = 0;
         int tp;
