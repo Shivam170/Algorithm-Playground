@@ -20,7 +20,6 @@ public class BinaryTree<T> {
         int rightSize = size(root.right);
         return leftSize + rightSize + 1;
     }
-
     public static int height(TreeNode root) {
         if (root == null) {
             return 0;
