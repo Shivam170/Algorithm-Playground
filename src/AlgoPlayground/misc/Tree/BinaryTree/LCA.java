@@ -2,7 +2,7 @@ package AlgoPlayground.misc.Tree.BinaryTree;
 
 import java.util.ArrayList;
 
-public class LCS {
+public class LCA {
     public int naiveLCA(TreeNode root, int n1, int n2) {
         ArrayList<Integer> path1 = new ArrayList<>();
         ArrayList<Integer> path2 = new ArrayList<>();
@@ -50,8 +50,8 @@ public class LCS {
         head = bt.insert(head, 20);
         head = bt.insert(head, 4);
         head = bt.insert(head, 3);
-        LCS lcs = new LCS();
-        System.out.println(lcs.lowestCommonAncestor(5, 20, head).data);
+        LCA LCA = new LCA();
+        System.out.println(LCA.lowestCommonAncestor(5, 20, head).data);
 
     }
 }
