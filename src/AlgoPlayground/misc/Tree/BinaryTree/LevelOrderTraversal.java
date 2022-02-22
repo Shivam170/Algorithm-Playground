@@ -62,6 +62,23 @@ public class LevelOrderTraversal {
         }
     }
 
+    public void levelOrderLineByLineM2(TreeNode root) {
+        if (root == null) return;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            int count = q.size();
+            for (int i = 0; i < count; i++) {
+                TreeNode curr = q.poll();
+                assert curr != null;
+                System.out.print(curr.data + " ");
+                if (curr.left != null) q.add(curr.left);
+                if (curr.right != null) q.add(curr.right);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         TreeNode head = null;
