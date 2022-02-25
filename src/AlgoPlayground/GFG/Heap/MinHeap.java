@@ -23,7 +23,7 @@ public class MinHeap {
         return (i - 1) / 2;
     }
 
-    void swap(int[] arr, int i, int j) {
+    void swap(int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
@@ -34,8 +34,22 @@ public class MinHeap {
         size++;
         arr[size - 1] = x;
         for (int i = size - 1; i != 0 && arr[parent(i)] > arr[i]; i++) {
-            swap(arr, i, parent(i));
+            swap(i, parent(i));
             i = parent(i);
+        }
+    }
+
+    void minHeapify(int i) {
+        int lt = left(i);
+        int rt = right(i);
+        int smallest = i;
+        if (lt < size && arr[lt] < arr[i])
+            smallest = lt;
+        if (rt < size && arr[rt] < arr[smallest])
+            smallest = rt;
+        if (smallest != i) {
+            swap(i, smallest);
+            minHeapify(smallest);
         }
     }
 }
