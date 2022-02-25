@@ -52,4 +52,17 @@ public class MinHeap {
             minHeapify(smallest);
         }
     }
+
+    int extractMin(){
+        if (size==0){
+            return Integer.MAX_VALUE;
+        }
+        if (size==1){
+            size--;
+            return arr[0];
+        }
+        swap(arr[0],arr[size-1]);
+        minHeapify(0);
+        return arr[size];
+    }
 }
