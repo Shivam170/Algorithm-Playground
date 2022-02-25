@@ -53,16 +53,25 @@ public class MinHeap {
         }
     }
 
-    int extractMin(){
-        if (size==0){
+    int extractMin() {
+        if (size == 0) {
             return Integer.MAX_VALUE;
         }
-        if (size==1){
+        if (size == 1) {
             size--;
             return arr[0];
         }
-        swap(arr[0],arr[size-1]);
+        swap(arr[0], arr[size - 1]);
+        size--;
         minHeapify(0);
         return arr[size];
+    }
+
+    void decreaseKey(int i, int x) {
+        arr[i] = x;
+        while (i != 0 && arr[parent(i)] > arr[i]) {
+            swap(i, parent(i));
+            i = parent(i);
+        }
     }
 }
