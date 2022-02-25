@@ -22,4 +22,20 @@ public class MinHeap {
     int parent(int i) {
         return (i - 1) / 2;
     }
+
+    void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    void insert(int x) {
+        if (size == capacity) return;
+        size++;
+        arr[size - 1] = x;
+        for (int i = size - 1; i != 0 && arr[parent(i)] > arr[i]; i++) {
+            swap(arr, i, parent(i));
+            i = parent(i);
+        }
+    }
 }
