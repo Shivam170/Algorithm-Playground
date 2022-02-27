@@ -22,4 +22,12 @@ public class HeapSort {
             maxHeapify(arr, n, i);
         }
     }
+
+    void heapSort(int[] arr, int n) {
+        buildHeap(arr, n);
+        for (int i = n - 1; i >= 1; i--) {
+            swap(arr, 0, i);
+            maxHeapify(arr, i, 0);
+        }
+    }
 }
