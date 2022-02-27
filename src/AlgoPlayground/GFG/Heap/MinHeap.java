@@ -1,5 +1,7 @@
 package AlgoPlayground.GFG.Heap;
 
+import java.util.PriorityQueue;
+
 public class MinHeap {
     int[] arr;
     int size;
@@ -74,4 +76,16 @@ public class MinHeap {
             i = parent(i);
         }
     }
+
+    void delete(int i) {
+        decreaseKey(i, Integer.MIN_VALUE);
+        extractMin();
+    }
+
+    void buildHeap() {
+        for (int i = (size - 2) / 2; i >= 0; i--) {
+            minHeapify(i);
+        }
+    }
+
 }
