@@ -8,6 +8,30 @@ public class TrieNode {
 class Operation {
     TrieNode root;
 
+    boolean isEmpty(TrieNode root) {
+        for (int i = 0; i < 26; i++) {
+            if (root.child[i] != null)
+                return false;
+        }
+        return true;
+    }
+
+    TrieNode delNode(TrieNode root, String key, int i) {
+        if (root == null) return null;
+        if (i == key.length()) {
+            root.isEnd = false;
+            if (isEmpty(root))
+                root = null;
+            return root;
+        }
+        int index = key.charAt(i) - 'a';
+        root.child[index] = delNode(root.child[index], key, i + 1);
+        if (isEmpty(root) && !root.isEnd) {
+            root = null;
+        }
+        return root;
+    }
+
     void insert(String key) {
         TrieNode curr = root;
         for (int i = 0; i < key.length(); i++) {
